@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:index, :create]
-
+  require 'payjp'
   def index
     gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
     @order = OrderAddress.new
