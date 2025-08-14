@@ -1,11 +1,15 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :create]
   before_action :set_order, only: [:index, :create]
   require 'payjp'
   def index
     gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
     @order = OrderAddress.new
+    if @item.user.id != current_user.id
+      redirect_to root_path
+    end
   end
-
+  
   def create
     @order = OrderAddress.new(order_params)
     if @order.valid?
@@ -21,6 +25,9 @@ class OrdersController < ApplicationController
   private
   def set_order
     @item = Item.find(params[:item_id])
+    unless user_signed_in?
+      redirect_to new_user_session_path
+    end
   end
 
   def order_params
