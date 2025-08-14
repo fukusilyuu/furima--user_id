@@ -4,10 +4,10 @@ FactoryBot.define do
     email { Faker::Internet.email }
     password { 'test1234' }
     password_confirmation { password }
-    first_name     { 'あ' }
-    last_name     { 'あ' }
-    first_name_kana    { 'カタ' }
-    last_name_kana     { 'カタ' }
+    firstname_kanji    { 'あ' }
+    lastname_kanji    { 'あ' }
+    firstname_katakana    { 'カタ' }
+    lastname_katakana     { 'カタ' }
     birth_date             { '1956.10.10' }
   end
 end
