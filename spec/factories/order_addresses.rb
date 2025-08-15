@@ -9,5 +9,6 @@ FactoryBot.define do
     token { Faker::Internet.password(min_length: 20, max_length: 30) }
     user_id { 2 }
     item_id { 2 }
+    
   end
 end

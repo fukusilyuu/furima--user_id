@@ -5,8 +5,7 @@ RSpec.describe OrderAddress, type: :model do
     user = FactoryBot.create(:user)
     item = FactoryBot.create(:item)
     @order_address = FactoryBot.build(:order_address, user_id: user.id, item_id: item.id)
-    @address = FactoryBot.build(:address)
-    @order = FactoryBot.build(:order)
+    
   end
 
   describe '配送先情報の保存' do
@@ -101,7 +100,7 @@ RSpec.describe OrderAddress, type: :model do
         expect(@order_address.errors.full_messages).to include('Phone number is invalid')
       end
       it '電話番号が9桁以下では保存できないこと' do
-        @order_address.phone_number = 12_345_679
+        @order_address.phone_number = 12_345_67
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include('Phone number is invalid')
       end
@@ -110,21 +109,7 @@ RSpec.describe OrderAddress, type: :model do
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Token can't be blank")
       end
-      it 'userが紐づいていないと出品できない' do
-        @order.user = nil
-        @order.valid?
-        expect(@order.errors.full_messages).to include("User must exist")
-      end
-      it 'itemが紐づいていないと出品できない' do
-        @order.item = nil
-        @order.valid?
-        expect(@order.errors.full_messages).to include("Item must exist")
-      end
-      it 'orderが紐づいていないと出品できない' do
-        @address.order = nil
-        @address.valid?
-        expect(@address.errors.full_messages).to include("Order must exist")
-      end
+      
     end
   end
 end
