@@ -13,30 +13,7 @@ RSpec.describe OrderAddress, type: :model do
       it 'すべての値が正しく入力されていれば保存できること' do
         expect(@order_address).to be_valid
       end
-      it 'user_idが空でなければ保存できる' do
-        @order_address.user_id = 2
-        expect(@order_address).to be_valid
-      end
-      it 'item_idが空でなければ保存できる' do
-        @order_address.item_id = 2
-        expect(@order_address).to be_valid
-      end
-      it '郵便番号が「3桁＋ハイフン＋4桁」の組み合わせであれば保存できる' do
-        @order_address.postal_code = '123-4560'
-        expect(@order_address).to be_valid
-      end
-      it '都道府県が「---」以外かつ空でなければ保存できる' do
-        @order_address.prefecture_id = 2
-        expect(@order_address).to be_valid
-      end
-      it '市区町村が空でなければ保存できる' do
-        @order_address.city = '横浜市緑区'
-        expect(@order_address).to be_valid
-      end
-      it '番地が空でなければ保存できる' do
-        @order_address.house_number = '青山1-1-1'
-        expect(@order_address).to be_valid
-      end
+     
       it '建物名が空でも保存できる' do
         @order_address.building_name = nil
         expect(@order_address).to be_valid
