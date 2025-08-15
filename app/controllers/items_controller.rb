@@ -9,9 +9,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    unless user_signed_in?
-      redirect_to new_user_session_path
-    end
+   
   end
 
   def create
@@ -24,12 +22,10 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @order = OrderAddress.new
     @orders = @item.orders.includes(:user)
   end
 
   def edit
-    @order = OrderAddress.new
     @orders = @item.orders.includes(:user)
     if @item.orders.length != 0
       redirect_to root_path

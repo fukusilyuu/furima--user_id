@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :create]
+  before_action :authenticate_user!, only: [:index, :create]
   before_action :set_order, only: [:index, :create]
   require 'payjp'
   def index
@@ -25,9 +25,7 @@ class OrdersController < ApplicationController
   private
   def set_order
     @item = Item.find(params[:item_id])
-    unless user_signed_in?
-      redirect_to new_user_session_path
-    end
+    
   end
 
   def order_params
