@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
   def index
     gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
     @order = OrderAddress.new
-    if @item.orders.length != 0
+    unless @item.order.nil?
       redirect_to root_path
     end
   end

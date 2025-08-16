@@ -4,7 +4,8 @@ class ItemsController < ApplicationController
   before_action :set_edit_destroy, only: [:edit, :destroy]
 
   def index
-    @items = Item.all.includes(:user).order('created_at DESC')
+    @items = Item.includes(:user).order('created_at DESC')
+
   end
 
   def new
@@ -17,16 +18,14 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
   def show
-    @orders = @item.orders.includes(:user)
   end
 
   def edit
-    @orders = @item.orders.includes(:user)
     if @item.orders.length != 0
       redirect_to root_path
     end
