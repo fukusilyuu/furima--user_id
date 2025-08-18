@@ -6,7 +6,7 @@ describe User do
 
   describe 'ユーザー新規登録' do
     context '新規登録がうまくいくとき' do
-      it 'nicknameとemail、passwordとpassword_confirmationとfirst_nameとlast_nameとfirst_name_kanaとlast_name_kanaとbirth_dateが存在すれば登録できる' do
+      it 'nicknameとemail、passwordとpassword_confirmationとfirstname_kanjiとlastname_kanjiとfirstname_katakanaとlastname_katakanaとbirth_dateが存在すれば登録できる' do
         expect(@user).to be_valid
       end
       it 'passwordが6文字以上であれば登録できる' do
@@ -82,43 +82,43 @@ describe User do
         @user.valid?
         expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
       end
-      it 'first_nameが存在しなければ登録できない' do
-        @user.first_name = ''
+      it 'firstname_kanjiが存在しなければ登録できない' do
+        @user.firstname_kanji = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("First name can't be blank")
       end
-      it 'last_nameが存在しなければ登録できない' do
-        @user.last_name = ''
+      it 'lastname_kanjiが存在しなければ登録できない' do
+        @user.lastname_kanji = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("Last name can't be blank")
       end
-      it 'first_name_kanaが存在しなければ登録できない' do
-        @user.first_name_kana = ''
+      it 'firstname_katakanaが存在しなければ登録できない' do
+        @user.firstname_katakana = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("First name kana can't be blank")
       end
-      it 'last_name_kanaが存在しなければ登録できない' do
-        @user.last_name_kana = ''
+      it 'lastname_katakanaが存在しなければ登録できない' do
+        @user.lastname_katakana = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("Last name kana can't be blank")
       end
-      it 'first_nameが全角入力でなければ登録できない' do
-        @user.first_name = 'a'
+      it 'firstname_kanjiが全角入力でなければ登録できない' do
+        @user.firstname_kanji = 'a'
         @user.valid?
         expect(@user.errors.full_messages).to include("First name は全角で入力してください")
       end
-      it 'last_nameが全角入力でなければ登録できない' do
-        @user.last_name = 'a'
+      it 'lastname_kanjiが全角入力でなければ登録できない' do
+        @user.lastname_kanji = 'a'
         @user.valid?
         expect(@user.errors.full_messages).to include("Last name は全角で入力してください")
       end
-      it 'first_name_katakanaが全角カタカナ入力でなければ登録できない' do
-        @user.first_name_kana = 'あ'
+      it 'firstname_katakanaが全角カタカナ入力でなければ登録できない' do
+        @user.firstname_katakana = 'あ'
         @user.valid?
         expect(@user.errors.full_messages).to include("First name kana はカタカナで入力してください")
       end
-      it 'last_name_kanaが全角カタカナ入力でなければ登録できない' do
-        @user.last_name_kana = 'あ'
+      it 'lastname_katakanaが全角カタカナ入力でなければ登録できない' do
+        @user.firstname_katakana = 'あ'
         @user.valid?
         expect(@user.errors.full_messages).to include("Last name kana はカタカナで入力してください")
       end
