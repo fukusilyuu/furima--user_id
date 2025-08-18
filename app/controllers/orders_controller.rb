@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
       redirect_to root_path
     end
   end
-  
+
   def create
     @order = OrderAddress.new(order_params)
     if @order.valid?
@@ -25,7 +25,9 @@ class OrdersController < ApplicationController
   private
   def set_order
     @item = Item.find(params[:item_id])
-    
+    if @item.user.id == current_user.id
+      redirect_to root_path
+    end
   end
 
   def order_params
