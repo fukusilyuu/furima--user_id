@@ -20,4 +20,8 @@ class Item < ApplicationRecord
   has_one :order
 
   has_one_attached :image, dependent: :destroy
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["name"]
+  end
 end
