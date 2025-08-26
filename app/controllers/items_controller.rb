@@ -5,7 +5,8 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.includes(:user).order('created_at DESC')
-
+    @q = Item.ransack(params[:q])
+    @items = @q.result
   end
 
   def new
@@ -45,6 +46,11 @@ class ItemsController < ApplicationController
     else
       render :show
     end
+  end
+
+  def search
+    @q = Item.ransack(params[:q])
+    @items = @q.result
   end
 
   private
