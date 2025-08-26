@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_08_13_232759) do
+ActiveRecord::Schema[7.1].define(version: 2025_08_19_162950) do
   create_table "active_storage_attachments", charset: "utf8mb3", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -52,6 +52,11 @@ ActiveRecord::Schema[7.1].define(version: 2025_08_13_232759) do
     t.index ["order_id"], name: "index_addresses_on_order_id"
   end
 
+  create_table "categories", charset: "utf8mb3", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "items", charset: "utf8mb3", force: :cascade do |t|
     t.string "name", null: false
     t.integer "price", null: false
@@ -74,6 +79,16 @@ ActiveRecord::Schema[7.1].define(version: 2025_08_13_232759) do
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_orders_on_item_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "post_tag_relations", charset: "utf8mb3", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags", charset: "utf8mb3", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", charset: "utf8mb3", force: :cascade do |t|
