@@ -102,3 +102,15 @@
   text-decoration: none;
   color: #333333;
 }
+
+#search-resultz{
+  width: 30%;
+}
+
+.childz{
+  margin: 5px;
+  border: 1px solid #dedede;
+  background-color: #F4F4F4;
+  padding: 5px;
+  font-size: 12px;
+}

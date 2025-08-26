@@ -16,8 +16,17 @@ class Item < ApplicationRecord
     validates :days_id
   end
 
+  belongs_to :applicationRecord
   belongs_to :user
   has_one :order
 
   has_one_attached :image, dependent: :destroy
+<<<<<<< Updated upstream
+=======
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["name"]
+  end
+
+>>>>>>> Stashed changes
 end
