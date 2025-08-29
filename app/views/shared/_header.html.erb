@@ -1,11 +1,12 @@
 <%# CSS・・・assets/stylesheets/shared/header.css %>
+<script src="category.js"></script>
 <header class='top-page-header'>
   <div class='search-bar-contents'>
     <%= link_to image_tag("images/furima-logo-color.png", class:"furima-icon"), "/" %>
     <form class="search-form" action="#">
-        <%= search_form_for @q, url: search_items_path, html: {id: "detailed-search-form"} do |f| %>
-
+      <%= search_form_for @q, url: search_items_path, html: {id: "detailed-search-form"} do |f| %>
       <%= f.text_field :name_cont,class:'input-box', placeholder:'キーワードから探す'%>
+         
       <button class="search-button">
         <%= image_tag "images/search.png", class:"search-icon" %>
       </button>
@@ -14,10 +15,19 @@
   </div>
   <div class='nav'>
     <ul class='lists-left'>
-      <%= search_form_for @q, url: search_items_path, html: {id: "detailed-search-form"} do |f| %>
-      <li><%= link_to 'カテゴリー', "#", id:"categorys", class: "category-list" %></li>
-      <%end%>
+      <%= search_form_for @q do |f| %>
+     <li><%= link_to 'カテゴリー', root_path, id:"categorys", class: "category-list" %></li>
+  <ul class="category-lists hidden" id="lists">
+        <li class="list" id="list">
+          <%= render "shared/sub" %>
+        </li>
+        <li class="list" id="price">
+          <%= render "shared/price" %>
+        </li>
+    </ul>
+ </li>
       <li><%= link_to 'ブランド', "#", class: "brand-list" %></li>
+      <%end%>
     </ul>
     <ul class='lists-right'>
       <% if user_signed_in?%>
@@ -25,7 +35,7 @@
       <li><%= link_to 'ログアウト', "#", data: {turbo_method: :delete}, class: "logout" %></li> 
 
 <%else%>
-      <li><%= link_to 'ログイン', "#", class: "login" %></li>
+      <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
       <li><%= link_to '新規登録', "#", class: "sign-up" %></li>
       <%end%>
     </ul>
