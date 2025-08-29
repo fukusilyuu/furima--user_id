@@ -33,11 +33,6 @@
   padding-left: 10px;
 }
 
-.search-btn {
-  background-color: #3ccace;
-
-}
-
 .search-button {
   width: 5vh;
   border: 0;
@@ -108,14 +103,12 @@
   color: #333333;
 }
 
-#search-resultz{
-  width: 30%;
+.hidden{
+  display: none;
 }
 
-.childz{
-  margin: 5px;
-  border: 1px solid #dedede;
-  background-color: #F4F4F4;
-  padding: 5px;
-  font-size: 12px;
+.submit-btn{
+  width: 200px;
+  height: 50px;
+  background-color: blanchedalmond;
 }

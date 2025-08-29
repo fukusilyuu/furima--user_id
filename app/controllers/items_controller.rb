@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
   def index
     @items = Item.includes(:user).order('created_at DESC')
     @q = Item.ransack(params[:q])
-    @items = @q.result
+      @items = @q.result
   end
 
   def new
