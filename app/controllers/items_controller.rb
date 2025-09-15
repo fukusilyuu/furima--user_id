@@ -6,7 +6,8 @@ class ItemsController < ApplicationController
   def index
     @items = Item.includes(:user).order('created_at DESC')
     @q = Item.ransack(params[:q])
-      @items = @q.result
+    @items = @q.result
+    
   end
 
   def new
@@ -49,8 +50,9 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @q = Item.ransack(params[:q])
-    @items = @q.result
+    return nil if params[:keyword] == ""
+    item = Item.where(['name LIKE ?', "%#{:keyword}%"])
+    render json:{ keyword: item }
   end
 
   private

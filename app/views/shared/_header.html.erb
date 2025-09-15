@@ -1,21 +1,22 @@
 <%# CSS・・・assets/stylesheets/shared/header.css %>
-<script src="category.js"></script>
 <header class='top-page-header'>
   <div class='search-bar-contents'>
     <%= link_to image_tag("images/furima-logo-color.png", class:"furima-icon"), "/" %>
     <form class="search-form" action="#">
-      <%= search_form_for @q, url: search_items_path, html: {id: "detailed-search-form"} do |f| %>
-      <%= f.text_field :name_cont,class:'input-box', placeholder:'キーワードから探す'%>
-         
+     <%#se?fo? form_with model: @item, url: search_items_path, local: true do |f| %>
+      <%= f.text_field :name, class:'input-box', placeholder:'キーワードから探す'%>
+        <div id="search-result"></div>
       <button class="search-button">
+
         <%= image_tag "images/search.png", class:"search-icon" %>
       </button>
-      <%end%>
+     <%end%>
     </form>
   </div>
   <div class='nav'>
     <ul class='lists-left'>
-      <%= search_form_for @q do |f| %>
+       <%# search_form_for @q do |f| %>
+       <%= search_form_for @q, url: search_items_path, html: {id: "detailed-search-form"} do |f| %>
      <li><%= link_to 'カテゴリー', "#", id:"categorys", class: "category-list" %></li>
       <%= render "shared/header_header" %>
     </li>
