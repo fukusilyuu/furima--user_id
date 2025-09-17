@@ -1,0 +1,19 @@
+.category-lists{
+  display: block;
+}
+
+.category-box{
+  width: 200px;
+}
+
+.category-inputs{
+  width: 100px;
+}
+
+
+.sum{
+  background-color: rgb(220, 81, 81);
+  border: wheat;
+  height:40px;
+  width: 60px;
+}
