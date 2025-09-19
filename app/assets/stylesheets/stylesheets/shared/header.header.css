@@ -1,0 +1,24 @@
+.category-lists{
+  display: block;
+  margin-left: 1px;
+}
+
+.category-box{
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.category-inputs{
+  width: 100px;
+  margin-top: 10px;
+}
+
+
+.sum{
+  margin-top: 10px;
+  background-color:crimson ;
+  border: wheat;
+  height:40px;
+  width: 100px;
+  color: aliceblue;
+}

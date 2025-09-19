@@ -1,22 +1,24 @@
-document.addEventListener("turbo:load", () => {
+window.addEventListener('load', function(){
   const Categorys = document.getElementById('categorys')
   const Categoryslists = document.getElementById('lists')
-  const Categoryslist = document.querySelector('list')
+  //const Categoryslist = document.querySelector('list')
   const Categorysprice = document.getElementById('price')
+  const del = document.getElementById("category-del");
+
+  Categoryslists.style.display = 'none';
   Categorys.addEventListener('click', function() {
-    if (Categoryslist.getAttribute("style") == "display:block;") {
-      Categoryslist.removeAttribute("style", "display:block;")
+    del.removeAttribute("style");
+    if (Categoryslists.getAttribute("style") == "display:block;") {
+      Categoryslists.setAttribute("style");
     } else {
-      Categoryslist.setAttribute("style")
-    }
-  })
-  Categoryslist.addEventListener('input', function() {
-    Categoryslist.remove();
-    return null;
-  })
-  Categorysprice.addEventListener('input', function() {
-    Categorysprice.remove();
-    return null;
-  })
+      Categoryslists.setAttribute("style", "display:block;");
+    };
+      //Categoryslists.setAttribute("style", "display:block;");
+   Categorys.addEventListener('click', function() {
+    Categoryslists.removeAttribute("style");
+
+   });
+  });
+ 
   
 });

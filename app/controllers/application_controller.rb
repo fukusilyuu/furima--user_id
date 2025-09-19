@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
-  before_action :set_search
   before_action :set_new
+  before_action :set_search
   before_action :basic_auth
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
   def set_new
     @item = Item.new
   end
+
 
   def set_search
     @q = Item.ransack(params[:q])
