@@ -1,7 +1,7 @@
 window.addEventListener('load', function(){
   const Categorys = document.getElementById('categorys')
   const Categoryslists = document.getElementById('lists')
-  const Categoryslist = document.querySelector('list')
+  //const Categoryslist = document.querySelector('list')
   const Categorysprice = document.getElementById('price')
   const del = document.getElementById("category-del");
 
@@ -13,7 +13,11 @@ window.addEventListener('load', function(){
     } else {
       Categoryslists.setAttribute("style", "display:block;");
     };
-     // cre
+      //Categoryslists.setAttribute("style", "display:block;");
+   Categorys.addEventListener('click', function() {
+    Categoryslists.removeAttribute("style");
+
+   });
   });
  
   
