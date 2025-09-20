@@ -52,12 +52,8 @@ ActiveRecord::Schema[7.1].define(version: 2025_09_20_022201) do
     t.index ["order_id"], name: "index_addresses_on_order_id"
   end
 
-  create_table "categories", charset: "utf8mb3", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "comments", charset: "utf8mb3", force: :cascade do |t|
+    t.text "text", null: false
     t.bigint "user_id", null: false
     t.bigint "item_id", null: false
     t.datetime "created_at", null: false
@@ -88,16 +84,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_09_20_022201) do
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_orders_on_item_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
-  end
-
-  create_table "post_tag_relations", charset: "utf8mb3", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "tags", charset: "utf8mb3", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", charset: "utf8mb3", force: :cascade do |t|
