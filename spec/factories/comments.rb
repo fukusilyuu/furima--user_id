@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :post_tag_relation do
+  factory :comment do
     
   end
 end

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'items#index'
+  resources :comments
   resources :items do
     resources :orders, only: [:index, :create] 
     collection do
