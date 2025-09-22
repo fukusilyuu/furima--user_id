@@ -87,7 +87,7 @@
 
   <div class="comment-box">
     <%#kaz%>
-     <%=form_with(model:[@item,@comment], url: comment_path, local: true) do |f|%>
+     <%=form_with(model:[@item,@comment], local: true) do |f|%>
       <%=f.text_field :text, class:"comment-text"%>
       <p class="comment-warn">
         相手のことを考え丁寧なコメントを心がけましょう。
@@ -99,7 +99,22 @@
           <span>コメントする<span>
       </button>
       <div class="comment-btn2">
-           <%= link_to "コメント欄", comment_path %>
+           <%= link_to "コメント欄", item_path %>
+      </div>
+        <div class="comments">
+         <span class="span">コメント欄</span>
+        <% @comments.each do |comment| %>
+         <div class="comments_lists">
+          <%=image_tag "images/comment.png", width:"20",height:"25"%>
+          <%=comment.user.nickname%>
+          <br>
+          <%=comment.text%>
+          <br>
+          <%=image_tag "images/star.png", class:"st-i", id:"star",width:"15",height:"15"%>
+          <span id='star-counts'></span>
+          <%=image_tag "images/comment.png", width:"15",height:"15"%>
+         </div>
+        <%end%>
       </div>
      <%end%>
   </div>

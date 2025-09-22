@@ -1,0 +1,33 @@
+.mains{
+  width: 700px;
+  background-color: darkgray;
+}
+
+
+.comments{
+  padding-top: 50px;
+  border-top: 1px solid gray;
+  margin-left: 3px;
+}
+
+
+.span{
+  font-size: 24px;
+  display: block;
+}
+
+.comments_lists{
+
+  margin-right: 10px;
+}
+
+
+.comments_list{  
+  background-color: white;
+
+  margin-bottom: 60px;
+}
+
+.st-i{
+  margin-right: 10px;
+}

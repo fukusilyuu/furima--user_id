@@ -1,5 +1,6 @@
 <%# CSS・・・assets/stylesheets/shared/header.css %>
 <script src="category.js?date=20250918"></script>
+<script src="star.js?date=20250922"></script>
 <header class='top-page-header'>
   <div class='search-bar-contents'>
     <div class="shared-header">
@@ -9,8 +10,9 @@
    
     <form class="search-form" action="#">
       <%#se?fo?%>
-     <%= form_with model: @item, url: search_items_path, local: true do |f| %>
-      <%= f.text_field :name, class:'input-box', placeholder:'キーワードから探す'%>
+     <%# f model: @item, local: true do |f| %>
+      <%= search_form_for @q do |f| %>
+      <%= f.text_field :name_cont, class:'input-box', placeholder:'キーワードから探す'%>
         <div id="search-result"></div>
       <button class="search-button">
 
@@ -21,8 +23,8 @@
   </div>
   <div class='nav'>
     <ul class='lists-left'>
-       <%# search_form_for @q do |f| %>
-       <%= search_form_for @q, url: search_items_path, html: {id: "detailed-search-form"} do |f| %>
+       <%= search_form_for @q do |f| %>
+       <%# search_form_for @q, url: search_items_path, html: {id: "detailed-search-form"} do |f| %>
      <li><%= link_to 'カテゴリー', "#", id:"categorys", class: "category-list", id:"category-del" %></li>
       
     </li>
