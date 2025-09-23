@@ -86,7 +86,7 @@
   <%# /商品の概要 %>
 
   <div class="comment-box">
-    <%#kaz%>
+    <%#eac%>
      <%=form_with(model:[@item,@comment], local: true) do |f|%>
       <%=f.text_field :text, class:"comment-text"%>
       <p class="comment-warn">
@@ -99,24 +99,23 @@
           <span>コメントする<span>
       </button>
       <div class="comment-btn2">
-           <%= link_to "コメント欄", item_path %>
+           <span id="comment-ran" >コメント欄</span>
       </div>
-        <div class="comments">
-         <span class="span">コメント欄</span>
-        <% @comments.each do |comment| %>
-         <div class="comments_lists">
-          <%=image_tag "images/comment.png", width:"20",height:"25"%>
-          <%=comment.user.nickname%>
-          <br>
-          <%=comment.text%>
-          <br>
-          <%=image_tag "images/star.png", class:"st-i", id:"star",width:"15",height:"15"%>
-          <span id='star-counts'></span>
-          <%=image_tag "images/comment.png", width:"15",height:"15"%>
-         </div>
-        <%end%>
-      </div>
+      <ul class="comments", id="comments">
+       <% @comments.each do |comment| %>
+        <li class="comment-lists">
+         <%= comment.user.nickname %>
+         <br>
+         <%= comment.text%>
+         <br>
+        <li class="comment-image">
+         <%=image_tag "images/comment.png",class:"c-i",width:"15",height:"20"%>
+         <%=image_tag"images/star.png",width:"15",height:"15"%>
+        </li>
+       <%end%>
+      </li>
      <%end%>
+   </ul>
   </div>
   <div class="links">
     <a href="#" class="change-item-btn">
