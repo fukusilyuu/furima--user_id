@@ -101,7 +101,7 @@
       <div class="comment-btn2">
            <span id="comment-ran" >コメント欄</span>
       </div>
-      <ul class="comments", id="comments">
+      <ul class="comments hidden", id="comments">
 
        <% @comments.each do |comment| %>
         <li class="comment-lists">   
@@ -109,8 +109,7 @@
           <br>
           <%= comment.text%>
        <%end%>
-         <div class="reply">
-         <%#form_with(model:[@comment,@reply], local: true) do |f|%>
+         <div class="reply hidden" id="reply">
           <div class="reply-context">
             <%= f.text_field :context, class:"reply-text" %>
             <%= f.submit "送信", class:"reply-submit"%>
@@ -126,7 +125,7 @@
           <%end%>
         </div>
          <li class="comment-image">
-             <%=image_tag "images/comment.png",class:"c-i",width:"15",height:"20"%>
+             <%=image_tag "images/comment.png",class:"c-i",width:"15",height:"20", id:"replies"%>
             <%=image_tag"images/star.png",id:"star",width:"15",height:"15"%>
             <span id='star-counts'>0</span>
            </li>
