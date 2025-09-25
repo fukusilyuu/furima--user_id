@@ -1,21 +1,32 @@
 .comments{
   padding: 40px 0 0 9px;
   margin-left: 7px;
+
 }
 
 .comment-lists{
   display: flex;
-  justify-content: left;
-  
+  justify-content: space-between;  
 }
 
 .comment-image{
   display: flex;
   justify-content: left;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   border-bottom: 1px solid whitesmoke;
 }
 
 .c-i{
   margin-right: 18px;
 }
+
+.reply{
+  height: 200px;
+  width: 150px;
+background-color:aliceblue;
+}
+
+
+.reply-lists{}
+
+.reply-list{}

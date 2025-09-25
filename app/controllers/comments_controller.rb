@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      redirect_to item_path(@comment.item)
+      redirect_to item_path
     else
       @item = @comment.item
       @comments = @item.comments

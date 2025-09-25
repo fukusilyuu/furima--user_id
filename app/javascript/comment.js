@@ -8,7 +8,7 @@ const comment = () => {
       Comments.setAttribute("style", "display:block;");
     };
     Comments.addEventListener('click', function() {
-      if (Comments.getAttribute("style") != "display:block;") {
+      if (Comments.getAttribute("style") == "display:block;") {
         Comments.setAttribute("style", "display:block;");
       } else {
         Comments.setAttribute("style");
