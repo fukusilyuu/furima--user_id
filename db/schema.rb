@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_08_19_162950) do
+ActiveRecord::Schema[7.1].define(version: 2025_09_24_124921) do
   create_table "active_storage_attachments", charset: "utf8mb3", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -52,9 +52,14 @@ ActiveRecord::Schema[7.1].define(version: 2025_08_19_162950) do
     t.index ["order_id"], name: "index_addresses_on_order_id"
   end
 
-  create_table "categories", charset: "utf8mb3", force: :cascade do |t|
+  create_table "comments", charset: "utf8mb3", force: :cascade do |t|
+    t.text "text", null: false
+    t.bigint "user_id", null: false
+    t.bigint "item_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_comments_on_item_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "items", charset: "utf8mb3", force: :cascade do |t|
@@ -81,14 +86,16 @@ ActiveRecord::Schema[7.1].define(version: 2025_08_19_162950) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table "post_tag_relations", charset: "utf8mb3", force: :cascade do |t|
+  create_table "replies", charset: "utf8mb3", force: :cascade do |t|
+    t.text "context", null: false
+    t.bigint "user_id", null: false
+    t.bigint "item_id", null: false
+    t.bigint "comment_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "tags", charset: "utf8mb3", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["comment_id"], name: "index_replies_on_comment_id"
+    t.index ["item_id"], name: "index_replies_on_item_id"
+    t.index ["user_id"], name: "index_replies_on_user_id"
   end
 
   create_table "users", charset: "utf8mb3", force: :cascade do |t|
@@ -112,7 +119,12 @@ ActiveRecord::Schema[7.1].define(version: 2025_08_19_162950) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "addresses", "orders"
+  add_foreign_key "comments", "items"
+  add_foreign_key "comments", "users"
   add_foreign_key "items", "users"
   add_foreign_key "orders", "items"
   add_foreign_key "orders", "users"
+  add_foreign_key "replies", "comments"
+  add_foreign_key "replies", "items"
+  add_foreign_key "replies", "users"
 end

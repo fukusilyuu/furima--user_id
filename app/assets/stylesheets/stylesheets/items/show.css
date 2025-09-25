@@ -175,6 +175,19 @@
   margin-bottom: 2vh;
 }
 
+.comment-btn2{
+  line-height: 48px;
+  background-color: #3CCACE;
+  border: 1px solid #3CCACE;
+  color: #fff;
+  width: 50%;
+  min-width: 150px;
+  font-size: 18px;
+  color: #fff;
+  border-radius: 100px;
+  margin-left: 152px;
+}
+
 .comment-flag {
   display: flex;
   justify-content: center;
