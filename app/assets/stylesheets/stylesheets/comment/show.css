@@ -21,12 +21,37 @@
 }
 
 .reply{
-  height: 200px;
-  width: 150px;
+  display: block;
 background-color:aliceblue;
 }
 
 
-.reply-lists{}
+.reply-context{
+  display: flex;
+  justify-content: space-between;  
+}
 
-.reply-list{}
+.reply-lists{
+  display: block;
+}
+
+.reply-list{
+  display: flex;
+  justify-content: left;
+  margin-top: 9px;
+  border-bottom: 1px solid grey;
+
+}
+
+
+.reply-text{
+  width: 87px;
+  height: 30px;
+  margin: 0 15px 0 5px;
+}
+
+.reply-submit{
+  width: 40px;
+  height: 30px;
+  margin-bottom: 5px;
+}

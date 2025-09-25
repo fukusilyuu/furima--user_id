@@ -110,23 +110,26 @@
           <%= comment.text%>
        <%end%>
          <div class="reply">
-          <div class="reply-lists">
-           <%#form_with(model:[@comment,@reply], local: true) do |f|%>
-           <span class="reply-list">e</span>
-           <%= f.text_field :context %>
-           <%= f.submit %>
-           <% @replies.each do |reply| %>
-           <%=reply.context%>
+         <%#form_with(model:[@comment,@reply], local: true) do |f|%>
+          <div class="reply-context">
+            <%= f.text_field :context, class:"reply-text" %>
+            <%= f.submit "送信", class:"reply-submit"%>
+          </div>
+            <% @replies.each do |reply| %>
+           <div class="reply-lists">
+            <div class="reply-list">
+             <%= reply.user.nickname %>
+             <br>
+             <%=reply.context%>
+           </div>
+          </div>
           <%end%>
-         </div>
         </div>
-         <!--/br>
-         -->
-        <li class="comment-image">
-          <%=image_tag "images/comment.png",class:"c-i",width:"15",height:"20"%>
-          <%=image_tag"images/star.png",id:"star",width:"15",height:"15"%>
-        <span id='star-counts'>0</span>
-        </li>
+         <li class="comment-image">
+             <%=image_tag "images/comment.png",class:"c-i",width:"15",height:"20"%>
+            <%=image_tag"images/star.png",id:"star",width:"15",height:"15"%>
+            <span id='star-counts'>0</span>
+           </li>
        </li>
      <%end%>
    </ul>
