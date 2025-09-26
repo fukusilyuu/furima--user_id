@@ -35,6 +35,16 @@ background-color:aliceblue;
   display: block;
 }
 
+
+.comment-report{
+  display: flex;
+}
+
+
+.comment-created-at{
+  margin: 0 5px 0 5px;
+}
+
 .reply-list{
   display: flex;
   justify-content: left;

@@ -5,6 +5,7 @@
   <div class="item-box">
     <h2 class="name">
        <%= @item.name %>
+       <%= l @item.created_at, class:"comment-created-at"%>
     </h2>
     <div class='item-img-content'>
       <%= image_tag @item.image, class:"item-box-img" %>
@@ -106,10 +107,14 @@
       <ul class="comments hidden", id="comments">
 
        <% @comments.each do |comment| %>
-        <li class="comment-lists">   
-          <%= comment.user.nickname %>
-          <br>
-          <%= comment.text%>
+        <li class="comment-lists">
+          <li class="comment-report">   
+           <%= comment.user.nickname %>
+           <%= l comment.created_at, class:"comment-created-at"%>
+           :
+           <br>
+           <%= comment.text%>
+          </li>
        <%end%>
          <div class="reply hidden" id="reply">
           <div class="reply-context">
@@ -120,6 +125,8 @@
            <div class="reply-lists">
             <div class="reply-list">
              <%= reply.user.nickname %>
+             <%= l reply.created_at, class:"comment-created-at"%>
+             :
              <br>
              <%=reply.context%>
            </div>
