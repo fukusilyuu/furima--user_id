@@ -1,0 +1,116 @@
+.report-news{
+  width: 100vw;
+  height: 120vh;
+  background-color:lavender ;
+  display: flex;
+}
+
+.report-new{
+  margin-left: 500px;
+}
+
+.report-header{
+  margin-top: 30px;
+  width: 500px;
+  border-radius: 10px;
+  height: 100px;
+  border: 1px solid #DDDDDD;
+  background-color: white;
+  position: relative;
+}
+
+.report-furima-icon{
+  height: 70px;
+  width: 270px;
+  margin: 14px 0 0 90px;
+}
+
+.report-contents{
+  margin-top: 30px;
+  width: 500px;
+  height: 60px;
+  border-radius: 10px;
+  border: 1px solid #DDDDDD;
+  background-color: white;
+  position: relative;
+}
+
+.report-h3{
+  margin: 9px 0 0 0;
+  font-size: 30px;
+}
+
+.reports{
+  margin-top: 30px;
+  width: 500px;
+  height: 340px;
+  border-radius: 10px;
+  border: 1px solid #DDDDDD;
+  background-color: white;
+  position: relative;
+}
+
+.report-content{
+  display: block;
+}
+
+.report-span{
+  font-size: 29px
+}
+
+.check-boxes{
+  margin-top: 10px;
+  display: flex;
+
+}
+
+.report-user-id{
+  margin-top: 30px;
+  width: 500px;
+  height: 50px;
+  border-radius: 20px;
+  border: 1px solid #DDDDDD;
+  background-color: white;
+}
+
+.span{
+  font-size: 20px;
+  margin: 9px 0 0 3px;
+}
+
+.report-name{
+  margin-top: 30px;
+  width: 500px;
+  height: 130px;
+  border-radius: 20px;
+  border: 1px solid #DDDDDD;
+  background-color: white;
+}
+
+.report-user{
+}
+
+
+
+.user-id-text{
+  margin-top: 10px;
+  width: 200px;
+  height: 33px;
+  display: block;
+}
+
+.report-h5{
+  margin-top: 20px;
+  border-top:  1px solid gray;
+  color: brown;
+}
+
+.report-submit{
+  margin-top: 20px;
+  height: 40px;
+  width: 78px;
+  background-color: cornflowerblue;
+  border: 1px solid rgb(97, 127, 154);
+  border-radius: 100px;
+  color: white;
+}

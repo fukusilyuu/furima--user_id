@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'items#index'
+  resources :reports
   resources :comments
   resources :replies, only: [:create]
   resources :items do

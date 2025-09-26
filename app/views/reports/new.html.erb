@@ -1,0 +1,31 @@
+<div class="report-news">
+  <div class="report-new">
+    <div class="report-header">
+      <%= link_to image_tag("images/furima-logo-color.png", class:"report-furima-icon"), "/" %>
+    </div>
+    <div class="report-contents">
+      <span class="report-h3">通報内容(複数選択可)</span>
+    </div>
+    <div class="reports">
+      <div class="report-content">
+        <%= form_with model: @report, url: reports_path(@report_id), local: true do |f|%>
+          <%= f.collection_check_boxes(:report_content, Report_content.all, :id, :name, {}, class:"check-boxes")%>
+        <%#end%>
+      </div>
+    </div>
+    <div class="report-user-id">
+      <div class="span">該当のユーザー名 id
+      </div>
+    </div>
+    <div class="report-name">
+      <div class="report-user">
+        <textarea class="user-id-text", placeholder="誤字脱字にご注意ください"></textarea>
+        <h5 class="report-h5">
+          該当しないユーザ名 idを入力した場合、利用制限や退会処分となることがあります。
+        </h5>
+      </div>
+    </div>
+      <%=f.submit "送信", class:"report-submit"%>
+      <%end%>
+  </div>
+</div>
