@@ -65,3 +65,26 @@ background-color:aliceblue;
   height: 30px;
   margin-bottom: 5px;
 }
+
+.ten-ran{
+  display: flex;
+}
+
+.comment-show{
+  width: 20px;
+  height: 10px;
+}
+
+.show-lists{
+  margin-left: 10px;
+  border: 1px solid gray;
+}
+
+.show-list{
+  border-bottom: 1px solid grey;
+  font-style: normal;
+}
+
+.show-span{
+  display: flex;
+}

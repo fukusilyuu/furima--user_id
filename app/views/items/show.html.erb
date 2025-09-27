@@ -111,7 +111,18 @@
           <li class="comment-report">   
            <%= comment.user.nickname %>
            <%= l comment.created_at, class:"comment-created-at"%>
-           :
+           <div class="ten-ran">
+            <div class="comment-show">
+             <span id="ten">:</span>
+            </div>
+            <ul class="show-lists">
+              <li>
+               <%=link_to "編集", edit_comment_path, class:"show-list" %>
+              <br>
+               <%= link_to "削除", comment_path, data: {turbo_method: :delete},  class:"show-list"%>
+              </li>
+            </ul>
+           </div>
            <br>
            <%= comment.text%>
           </li>
@@ -126,7 +137,7 @@
             <div class="reply-list">
              <%= reply.user.nickname %>
              <%= l reply.created_at, class:"comment-created-at"%>
-             :
+             <span id="ten">:</span>
              <br>
              <%=reply.context%>
            </div>
