@@ -1,6 +1,6 @@
-class Report_content < ActiveHash::Base
+class ReportContent < ActiveHash::Base
   include ActiveHash::Associations
-  has_many :reports
+  has_one :report
 
   self.data = [
     { id: 0, name: '--' },

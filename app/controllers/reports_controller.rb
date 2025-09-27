@@ -6,7 +6,7 @@ class ReportsController < ApplicationController
   def create
     @report = Report.new(report_params)
     if @report.save
-      redirect_to item_path(@report.id)
+      redirect_to item_path(@report_id)
     else
       render :new
     end
