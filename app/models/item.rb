@@ -15,8 +15,7 @@ class Item < ApplicationRecord
     validates :prefecture_id
     validates :days_id
   end
-
-  belongs_to :applicationRecord
+belongs_to :ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_many :replies, dependent: :destroy

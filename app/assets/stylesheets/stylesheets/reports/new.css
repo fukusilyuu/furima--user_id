@@ -114,3 +114,9 @@
   border-radius: 100px;
   color: white;
 }
+
+.report-sum{
+  width: 100vw;
+  height: 100vh;
+  background-color: blue;
+}

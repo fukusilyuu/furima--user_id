@@ -168,8 +168,10 @@
           <div class='item-price'>
             <span>99999999円<br>(税込み)</span>
             <div class='star-btn'>
+             <%if user_signed_in?%>
               <%= image_tag "images/star.png", class:"star-icon" %>
               <span class='star-count'>0</span>
+             <%end%>
             </div>
           </div>
         </div>
