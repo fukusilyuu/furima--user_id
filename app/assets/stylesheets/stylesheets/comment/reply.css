@@ -1,0 +1,24 @@
+.reply{
+background-color:aliceblue;
+width: 165px;
+display: block;
+justify-content:right;
+margin-left: 15px;
+}
+
+
+.reply-context{
+  display: flex;
+}
+
+.reply-text{
+  width: 92px;
+  height: 30px;
+  margin: 0 15px 0 5px;
+}
+
+.reply-submit{
+  width: 40px;
+  height: 30px;
+  margin-bottom: 5px;
+}

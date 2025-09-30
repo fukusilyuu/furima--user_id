@@ -7,7 +7,6 @@ class ItemsController < ApplicationController
     @items = Item.includes(:user).order('created_at DESC')
     @q = Item.ransack(params[:q])
     @items = @q.result
-    
   end
 
   def new
@@ -29,6 +28,7 @@ class ItemsController < ApplicationController
     @reply = Reply.new
     @comments = @item.comments.includes(:user)
     @replies = @comment.replies.includes(:user)
+
   end
 
   def edit
